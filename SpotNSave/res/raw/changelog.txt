@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style type='text/css'>
+      a            { color:#143b8a }
+      div.title    { 
+          color:#2363e4; 
+          font-size:1.2em; 
+          font-weight:bold; 
+          margin-top:1em; 
+          margin-bottom:0.5em; 
+          text-align:center }
+      div.subtitle { 
+          color:#143b8a; 
+          font-size:0.8em; 
+          margin-bottom:1em; 
+          text-align:center }
+      div.freetext { color:#F0F0F0 }
+      div.list     { color:#C0C0F0 }
+    </style>
+  </head>
+  <body>
+   % First runs might be a bit slow. Please give the app some time to cash all data needed.
+$ 0.94
+  % Version 0.94
+  _ 2013-10-01
+    * quick phrases implemented
+    * automatic logout issue for several phone types improved
+    * several minor improvements
+$ 0.92/0.93
+  % Version 0.92/0.93
+  _ 2013-09-12
+    * pull to refresh implemented (canceled in 0.93 due to compatibility issues with Android 2.3)
+    * exit animation changed
+    * ad networks sdks changed
+$ 0.91
+  % Version 0.91
+  _ 2013-08-13
+    * permanent overflow menu button for devices after Android 4.0 with hardware menu button
+    * menu for non-touch version added to the menu with redirect 
+    * changelog implemented
+    * built base changed
+    * logout was placed within the menu
+$ 0.90
+  % Version 0.90
+  _ 2013-08-11
+    * Action Bar implemented
+    * holo theme implemented
+    * performance improvements
+    * notifications improved
+$ 0.894
+  % Version 0.894
+  _ 
+    * automatic log-out prevention for more phone types implemented
+    * new built tools used
+    * performance improvements
+$ 0.893
+  % Version 0.893
+  _ 
+    * notifications can be turned off from the menu
+    * automatic log-out prevention for more phone types implemented
+$ 0.892
+  % Version 0.892
+  _ 
+  	* fix for location detection on some phones
+$ END_OF_CHANGE_LOG
+  </body>
+</html>

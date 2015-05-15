@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/im_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/des" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_next"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/im_next" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/back_btn" />
+
+        <ImageView
+            android:id="@+id/im_reg_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/parents"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/relguard1"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btcaddrectangle" >
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/add_btn" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow_settting1"
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieedit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting1"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieeditno1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting1"
+                    android:gravity="center"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="85dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting1"
+                    android:gravity="center"
+                    android:text="@string/real_time_tracking"
+                    android:textColor="@color/primary_color"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/im_setttingsprofieedit1"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscross1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/delete" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscrosstick1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/untick"
+                    android:tag="@string/_0" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relguard2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btcaddrectangle" >
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/add_btn" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow_settting2"
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieedit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting2"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieeditno2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting2"
+                    android:gravity="center"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="85dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting2"
+                    android:gravity="center"
+                    android:text="@string/real_time_tracking"
+                    android:textColor="@color/primary_color"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/im_setttingsprofieedit2"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscross2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/delete" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscrosstick2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/untick"
+                    android:tag="@string/_1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relguard3"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btcaddrectangle" >
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/add_btn" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow_settting3"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieedit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting3"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieeditno3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting3"
+                    android:gravity="center"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="85dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting3"
+                    android:gravity="center"
+                    android:text="@string/real_time_tracking"
+                    android:textColor="@color/primary_color"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/im_setttingsprofieedit3"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscross3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/delete" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscrosstick3"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/untick"
+                    android:tag="@string/_2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relguard4"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btcaddrectangle" >
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/add_btn" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow_settting4"
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieedit4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting4"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieeditno4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting4"
+                    android:gravity="center"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="85dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting4"
+                    android:gravity="center"
+                    android:text="@string/real_time_tracking"
+                    android:textColor="@color/primary_color"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/im_setttingsprofieedit4"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscross4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/delete" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscrosstick4"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/untick"
+                    android:tag="@string/_3" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relguard5"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/btcaddrectangle" >
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/add_btn" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow_settting5"
+                    android:layout_width="1dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/des" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieedit5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting5"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_setttingsprofieeditno5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="55dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting5"
+                    android:gravity="center"
+                    android:text="@string/test"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="85dp"
+                    android:layout_toRightOf="@+id/im_shadow_settting5"
+                    android:gravity="center"
+                    android:text="@string/real_time_tracking"
+                    android:textColor="@color/primary_color"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/im_setttingsprofieedit5"
+                    android:layout_width="22dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/edit" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscross5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/delete" />
+
+                <ImageView
+                    android:id="@+id/im_setttingscrosstick5"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/untick"
+                    android:tag="@string/_4" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/im_add_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/des"
+                android:src="@drawable/add_btn" />
+
+            <TextView
+                android:id="@+id/tv_addguard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/add_guardian"
+                android:textColor="@color/primary_color"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-20dp" >
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

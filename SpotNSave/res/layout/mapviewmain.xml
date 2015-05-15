@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapViewMainfromSDK" >
+
+    
+    
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@layout/header"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+    
+    
+    
+    
+        <!--  Header Starts-->
+<LinearLayout 
+    android:orientation="vertical"
+    android:id="@+id/header"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:background="@layout/header"
+  	android:paddingTop="5dip"
+  	android:paddingBottom="5dip">
+  	
+</LinearLayout>
+<!--  Header Ends -->    
+    
+      		<!-- Footer Start -->
+
+  		<RelativeLayout
+  		    android:id="@+id/RelativeLayout03"
+  		    android:layout_width="wrap_content"
+  		    android:layout_height="wrap_content"
+  		    android:layout_alignParentBottom="true"
+  		    android:gravity="center_horizontal" >
+
+        <com.epicelements.spotnsave.footer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal" />
+
+        </RelativeLayout>
+  		<!-- Footer Ends -->
+  		
+ <!-- sliding menu -->
+ 
+	
+
+</RelativeLayout> 

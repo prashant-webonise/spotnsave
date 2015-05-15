@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF" >
+
+        <ImageView
+            android:id="@+id/im_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/des" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_next"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/im_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/back_btn" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="110dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp" >
+
+                <ImageView
+                    android:id="@+id/im_settingsprofile"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:background="@drawable/pic_frame"
+                    android:contentDescription="@string/des" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/demo_pic" />
+
+                <com.makeramen.RoundedImageView
+                    android:id="@+id/im_shadow"
+                    android:layout_width="89dp"
+                    android:layout_height="89dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/des" />
+            </RelativeLayout> 
+
+            <TextView
+                android:id="@+id/tv_pfname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/emergency_contact"
+                android:textColor="#825EA8"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/tv_guardian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:onClick="Guardians"
+                android:src="@drawable/guardians" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/des"
+                    android:src="@drawable/lbn" />
+
+                <ImageView
+                    android:id="@+id/li_batteyvisible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40dp"
+                    android:contentDescription="@string/des"
+                    android:onClick="Location"
+                    android:src="@drawable/on" /> 
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/tv_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:onClick="About"
+                android:src="@drawable/about" />
+
+            <ImageView
+                android:id="@+id/tv_privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:onClick="Legal"
+                android:src="@drawable/privacypolicy" />
+
+            <ImageView
+                android:id="@+id/tv_deleteaccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:onClick="Deactive"
+                android:src="@drawable/deleteaccount" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
