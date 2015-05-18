@@ -180,23 +180,23 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		im_centreprofile = (ArcMenu) mRootView.findViewById(R.id.im_centreprofile);
 		control_hint = (Button) im_centreprofile.findViewById(R.id.control_hint);
 		ArcLayout item_layout = (ArcLayout) im_centreprofile.findViewById(R.id.item_layout);
-		
+
 		control_hint.setOnClickListener(sosOnClickListener);
 		im_centreprofile.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		item_layout.setOnClickListener(sosOnClickListener);
 		item_layout.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 
@@ -557,18 +557,25 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	private OnClickListener sosOnClickListener = new OnClickListener() {
 		public void onClick(View v) {
-			if (appPrefes.getData("sos").equals("active")) {
-				stop();
-			} else {
-				if (noguard) {
-					Intent intent = new Intent(mContext, SosView.class);
-					startActivity(intent);
-					mContext.overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+
+			if (guardianCount > 0) {
+
+				if (appPrefes.getData("sos").equals("active")) {
+					stop();
 				} else {
-					new AlertDialog.Builder(context).setTitle("Error message")
-							.setMessage("Please select a minimum of one guardian to send an SOS").setCancelable(false)
-							.setNegativeButton("Ok", new ondialog()).show();
+					if (noguard) {
+						Intent intent = new Intent(mContext, SosView.class);
+						startActivity(intent);
+						mContext.overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+					} else {
+						new AlertDialog.Builder(context).setTitle("Error message")
+								.setMessage("Please select a minimum of one guardian to send an SOS")
+								.setCancelable(false).setNegativeButton("Ok", new ondialog()).show();
+					}
 				}
+
+			} else {
+				Toast.makeText(mContext, "Please add a guardian first", Toast.LENGTH_SHORT).show();
 			}
 
 		}
@@ -955,7 +962,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 					final NewDetailGuardian guardian = new NewDetailGuardian();
 					guardian.getGuardianDetailFor(detailGuardian.lists.get(0), i);
-					
+
 					Button item = new Button(mContext);
 					item.setBackgroundResource(R.drawable.drawable_guardian_icon);
 					item.setText(guardian.getName());
@@ -968,7 +975,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 					im_centreprofile.addItem(item, new OnClickListener() {
 
 						@Override
-						public void onClick(View v) {				
+						public void onClick(View v) {
 							Intent intent = new Intent(mContext, AddEmergency.class);
 							intent.putExtra(Constant.KEY_SER, guardian);
 							startActivity(intent);
@@ -1001,7 +1008,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 					@Override
 					public void onClick(View v) {
-						
+
 					}
 				});
 			}

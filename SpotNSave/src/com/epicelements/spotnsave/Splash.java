@@ -60,7 +60,7 @@ public class Splash extends FragmentActivity implements OnClickListener {
 	private void checkfirst() {
 		// TODO Auto-generated method stub
 		if (!appPrefes.getData("fullnameregistration").equals("")) {
-			Intent intent = new Intent(Splash.this, AddGuard.class);
+			Intent intent = new Intent(Splash.this, Home.class);
 			startActivity(intent);
 			finish();
 		}

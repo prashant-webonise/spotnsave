@@ -526,7 +526,7 @@ public class Registration_New extends FragmentActivity implements
 								appPrefes.SaveData("sessionsession", response);
 								appPrefes.SaveData("userID", session.Details);
 								Intent i = new Intent(Registration_New.this,
-										AddGuard.class);
+										Home.class);
 								finish();
 								startActivity(i);
 								if (session.Status.equals("register")) {
@@ -745,7 +745,7 @@ public class Registration_New extends FragmentActivity implements
 				success = json.getInt(TAG_SUCCESS);
 				if (success == 1) {
 					Log.d("User Created!", json.toString());
-					Intent i = new Intent(Registration_New.this, AddGuard.class);
+					Intent i = new Intent(Registration_New.this, Home.class);
 					finish();
 					startActivity(i);
 					return json.getString(TAG_MESSAGE);
