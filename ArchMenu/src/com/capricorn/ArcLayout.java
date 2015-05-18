@@ -18,9 +18,13 @@ package com.capricorn;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -71,6 +75,7 @@ public class ArcLayout extends ViewGroup {
 	public ArcLayout(Context context) {
 		super(context);
 		this.context = context;
+		this.setWillNotDraw(false);
 	}
 
 	public ArcLayout(Context context, AttributeSet attrs) {
@@ -78,6 +83,7 @@ public class ArcLayout extends ViewGroup {
 		this.context = context;
 
 		if (attrs != null) {
+			this.setWillNotDraw(false);
 			TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ArcLayout, 0, 0);
 			mFromDegrees = a.getFloat(R.styleable.ArcLayout_fromDegrees, DEFAULT_FROM_DEGREES);
 			mToDegrees = a.getFloat(R.styleable.ArcLayout_toDegrees, DEFAULT_TO_DEGREES);
@@ -315,8 +321,21 @@ public class ArcLayout extends ViewGroup {
 
 	private static int pxToDp(int dp) {
 		DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-		int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));       
-	    return px;
+		int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
+		return px;
 	}
 
+	@Override
+	protected void onDraw(Canvas canvas) {
+		// super.onDraw(canvas);
+		final int centerX = getWidth() / 2;
+		final int centerY = getHeight() / 2;
+		final int radius = mExpanded ? mRadius : 0;
+		Log.i(VIEW_LOG_TAG, "#####Radius : " + radius);
+		Paint paint = new Paint();
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(2.0f);
+		paint.setColor(Color.BLACK);
+		canvas.drawCircle(centerX, centerY, radius, paint);
+	}
 }
