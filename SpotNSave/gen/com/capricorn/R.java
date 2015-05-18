@@ -13,6 +13,11 @@ public final class R {
 		public static final int leftHolderWidth = 0x7f010065;
 		public static final int toDegrees = 0x7f010063;
 	}
+	public static final class color {
+		public static final int primary_color = 0x7f070007;
+		public static final int stroke_color = 0x7f070008;
+		public static final int white = 0x7f070006;
+	}
 	public static final class drawable {
 		public static final int composer_button = 0x7f0200ae;
 		public static final int composer_button_normal = 0x7f0200af;
@@ -30,6 +35,9 @@ public final class R {
 	public static final class layout {
 		public static final int arc_menu = 0x7f030019;
 		public static final int ray_menu = 0x7f03002e;
+	}
+	public static final class string {
+		public static final int sos = 0x7f0b000d;
 	}
 	public static final class styleable {
 		public static final int[] ArcLayout = { 0x7f010062, 0x7f010063, 0x7f010064 };

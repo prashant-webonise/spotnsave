@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.epicelements.spotnsave"
     android:installLocation="auto"
-    android:versionCode="13"
+    android:versionCode="14"
     android:versionName="2.1" >
 
     <supports-screens

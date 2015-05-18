@@ -6,7 +6,7 @@ public class DetailGuardian {
 	public String Status;
 	public List<lists> lists;
 
-	class lists {
+	public class lists {
 		public List<String> id;
 		public List<String> userID;
 		public List<String> name;

@@ -253,7 +253,7 @@
         <string name="_2">2</string>
         <string name="_3">3</string>
         <string name="_4">4</string>
-        <string name="add_guardian">Add Guardian</string>
+        <string name="add_guardian">Add Emergency Contact</string>
         <string name="profile_picture">Profile Picture</string>
         <string name="user_name">User name</string>
         <string name="press_add_a_guardian">Press + add a guardian</string>
@@ -272,6 +272,8 @@
         <string name="sos_has_been_cancelled_">SOS has been cancelled!</string>
         <string name="guardians_added_">"Guardians Added : "</string>
         <string name="device_battery_">"Device Battery : "</string>
-        <string name="personal_sefety">Personal Sefety</string>
+        <string name="personal_safety">Personal Safety</string>
+        <string name="save">Save</string>
+        <string name="edit_guardian">Edit Emergency Contact</string>
 
 </resources>

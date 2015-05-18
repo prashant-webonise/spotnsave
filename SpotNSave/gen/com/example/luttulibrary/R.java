@@ -26,12 +26,12 @@ public final class R {
 		public static final int never_show = 0x7f03002a;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f0b000d;
-		public static final int location_instructions = 0x7f0b0011;
-		public static final int location_settings = 0x7f0b000f;
-		public static final int location_settings_title = 0x7f0b000e;
-		public static final int location_skip = 0x7f0b0010;
-		public static final int never_show_again = 0x7f0b0012;
+		public static final int app_name = 0x7f0b000e;
+		public static final int location_instructions = 0x7f0b0012;
+		public static final int location_settings = 0x7f0b0010;
+		public static final int location_settings_title = 0x7f0b000f;
+		public static final int location_skip = 0x7f0b0011;
+		public static final int never_show_again = 0x7f0b0013;
 	}
 	public static final class style {
 		public static final int AppBaseTheme = 0x7f0c005b;

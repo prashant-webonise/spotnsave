@@ -54,9 +54,9 @@ public class Home extends FragmentActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-		getActionBar().setTitle("  " + getString(R.string.personal_sefety));
+		getActionBar().setTitle("  " + getString(R.string.personal_safety));
 		getActionBar().setIcon(R.drawable.navigatio_btn);
-		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF02A9D8")));
+		getActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.primary_color)));
 		getActionBar().setHomeButtonEnabled(true);
 
 		setContentView(R.layout.dashboard);

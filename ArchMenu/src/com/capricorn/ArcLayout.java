@@ -105,7 +105,7 @@ public class ArcLayout extends ViewGroup {
 
 		final int radius = (int) ((perSize / 2) / Math.sin(Math.toRadians(perHalfDegrees)));
 
-		return pxToDp(120);
+		return dPToPx(120);
 	}
 
 	private static Rect computeChildFrame(final int centerX, final int centerY, final int radius, final float degrees,
@@ -319,7 +319,7 @@ public class ArcLayout extends ViewGroup {
 		requestLayout();
 	}
 
-	private static int pxToDp(int dp) {
+	private static int dPToPx(int dp) {
 		DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
 		int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
 		return px;
@@ -334,8 +334,8 @@ public class ArcLayout extends ViewGroup {
 		Log.i(VIEW_LOG_TAG, "#####Radius : " + radius);
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
-		paint.setStrokeWidth(2.0f);
-		paint.setColor(Color.BLACK);
+		paint.setStrokeWidth(dPToPx(2));
+		paint.setColor(getResources().getColor(R.color.stroke_color));
 		canvas.drawCircle(centerX, centerY, radius, paint);
 	}
 }

@@ -40,6 +40,7 @@ import android.widget.Toast;
 import com.belcomm.scanservice.ScanBGService;
 import com.blecomm.main.BluetoothDeviceActor;
 import com.blecomm.utils.Utils;
+import com.capricorn.ArcLayout;
 import com.capricorn.ArcMenu;
 import com.epicelements.spotnsave.DetailGuardian.lists;
 import com.google.gson.Gson;
@@ -49,9 +50,11 @@ import com.luttu.AppPrefes;
 import com.luttu.GPSTracker;
 import com.luttu.PictureOrentation;
 import com.makeramen.RoundedImageView;
+import com.util.Constant;
 import com.util.GlobalFunctions;
 import com.util.GlobalFunctions.HttpResponseHandler;
 import com.util.ImageSmallerAction;
+import com.util.NewDetailGuardian;
 
 public class HomeFragment extends Fragment implements OnClickListener {
 
@@ -176,7 +179,26 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		// //////////////////////////////////////////////////////////////
 		im_centreprofile = (ArcMenu) mRootView.findViewById(R.id.im_centreprofile);
 		control_hint = (Button) im_centreprofile.findViewById(R.id.control_hint);
+		ArcLayout item_layout = (ArcLayout) im_centreprofile.findViewById(R.id.item_layout);
+		
 		control_hint.setOnClickListener(sosOnClickListener);
+		im_centreprofile.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		item_layout.setOnClickListener(sosOnClickListener);
+		item_layout.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 
 		// //////////////////////////////////////////////////////////////
 
@@ -294,7 +316,8 @@ public class HomeFragment extends Fragment implements OnClickListener {
 		if (appPrefes.getData("settingschaged").equals("true")) {
 			appPrefes.SaveData("settingschaged", "false");
 		}
-//		mContext.registerReceiver(mBatteryReceiver, Utils.makeIntentFilter());
+		// mContext.registerReceiver(mBatteryReceiver,
+		// Utils.makeIntentFilter());
 		if (appPrefes.getData("sos").equals("active")) {
 			if (appPrefes.getIntData("remainsecond") == 0) {
 				appPrefes.SaveIntData("remainsecond", 120);
@@ -668,7 +691,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			sosActiveLayout.setVisibility(View.GONE);
 			im_centreprofile.setVisibility(View.VISIBLE);
 			((ViewGroup) textView2.getParent()).setVisibility(View.GONE);
-			control_hint.setText("SOS");
+			control_hint.setText(R.string.sos);
 			// im_centreprofile.setBackgroundResource(R.drawable.bt_selector_like);
 			// tv1.setText("spotNsave is now Offline");
 			tv1.setText("Emergency Alert: De-Activated");
@@ -785,61 +808,61 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			val = 50;
 		}
 
-		val = (level /scale)* 100;
+		val = (level / scale) * 100;
 
 		txtbatteryVal.setText(getString(R.string.device_battery_));
-		setBatteryImage(txtbatteryVal, (int)val);
+		setBatteryImage(txtbatteryVal, (int) val);
 	}
-	
-	private void setBatteryImage(TextView txtbatteryVal, int value){
+
+	private void setBatteryImage(TextView txtbatteryVal, int value) {
 		if (value > 0 && value <= 5) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_0, 0);
-		} else if (value > 5 && value < 18 ) {
+		} else if (value > 5 && value < 18) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_15, 0);
-		} else if (value >= 18 && value < 32 ) {
+		} else if (value >= 18 && value < 32) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_28, 0);
-		} else if (value >= 32 && value < 48 ) {
+		} else if (value >= 32 && value < 48) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_43, 0);
-		} else if (value >= 48 && value < 61 ) {
+		} else if (value >= 48 && value < 61) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_57, 0);
-		} else if (value >= 61 && value < 75 ) {
+		} else if (value >= 61 && value < 75) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_71, 0);
-		} else if (value >= 75 && value < 95 ) {
+		} else if (value >= 75 && value < 95) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_85, 0);
-		} else if (value >= 95 ) {
+		} else if (value >= 95) {
 			txtbatteryVal.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.stat_sys_battery_100, 0);
 		}
-		
+
 	}
 
-	/*private final BroadcastReceiver mBatteryReceiver = new BroadcastReceiver() {
-		@Override
-		public void onReceive(Context context, Intent intent) {
-			int currentLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-			int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-			int level = -1;
-			if (currentLevel >= 0 && scale > 0) {
-				level = (currentLevel * 100) / scale;
-			}
-			txtbatteryVal.setVisibility(View.VISIBLE);
-//			txtbatteryVal.setText(getString(R.string.device_battery_) + getBatteryLevel() + "%");
-
-			Log.i("AA", "###########");
-
-			
-			 * String action = intent.getAction(); if
-			 * (Utils.ACTION_BATTERY_LEVEL.equals(action)) { String val =
-			 * String.valueOf(Utils.getBatteryValue());
-			 * 
-			 * Log.i("AA", "$$$$$$$$$"+val);
-			 * 
-			 * txtbatteryVal.setVisibility(View.VISIBLE);
-			 * txtbatteryVal.setText(getString(R.string.device_battery_) + val +
-			 * "%"); }
-			 
-		}
-
-	};*/
+	/*
+	 * private final BroadcastReceiver mBatteryReceiver = new
+	 * BroadcastReceiver() {
+	 * 
+	 * @Override public void onReceive(Context context, Intent intent) { int
+	 * currentLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1); int
+	 * scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1); int level =
+	 * -1; if (currentLevel >= 0 && scale > 0) { level = (currentLevel * 100) /
+	 * scale; } txtbatteryVal.setVisibility(View.VISIBLE); //
+	 * txtbatteryVal.setText(getString(R.string.device_battery_) +
+	 * getBatteryLevel() + "%");
+	 * 
+	 * Log.i("AA", "###########");
+	 * 
+	 * 
+	 * String action = intent.getAction(); if
+	 * (Utils.ACTION_BATTERY_LEVEL.equals(action)) { String val =
+	 * String.valueOf(Utils.getBatteryValue());
+	 * 
+	 * Log.i("AA", "$$$$$$$$$"+val);
+	 * 
+	 * txtbatteryVal.setVisibility(View.VISIBLE);
+	 * txtbatteryVal.setText(getString(R.string.device_battery_) + val + "%"); }
+	 * 
+	 * }
+	 * 
+	 * };
+	 */
 
 	private void setguardian() {
 		// TODO Auto-generated method stub
@@ -926,33 +949,28 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			guardianCount = detailGuardian.lists.get(0).id.size();
 
 			Log.i(TAG, "@@@@@@@@@@@ guardianCount " + guardianCount);
-			/*
-			 * View item0 =
-			 * getLayoutInflater().inflate(R.layout.add_new_guardian_button,
-			 * null);
-			 * 
-			 * im_centreprofile.addItem(item0, new OnClickListener() {
-			 * 
-			 * @Override public void onClick(View v) { startActivity(new
-			 * Intent(Home.this, AddEmergency.class)); } });
-			 */
 
 			if (maxGuardiansAllowed > guardianCount) {
 				for (int i = 0; i < guardianCount; i++) {
+
+					final NewDetailGuardian guardian = new NewDetailGuardian();
+					guardian.getGuardianDetailFor(detailGuardian.lists.get(0), i);
+					
 					Button item = new Button(mContext);
 					item.setBackgroundResource(R.drawable.drawable_guardian_icon);
-					item.setText(detailGuardian.lists.get(0).name.get(i));
+					item.setText(guardian.getName());
 					item.setTextSize(TypedValue.COMPLEX_UNIT_SP, 10);
 					item.setSingleLine(true);
 
-					Log.i(TAG, "@@@@@@@@@@@ guardian namew " + detailGuardian.lists.get(0).name.get(i));
+					Log.i(TAG, "@@@@@@@@@@@ guardian namew " + guardian.getName());
 
 					item.setTag(String.valueOf(guardianCount));
 					im_centreprofile.addItem(item, new OnClickListener() {
 
 						@Override
-						public void onClick(View v) {
-							Intent intent = new Intent(mContext, Settingsnewnew.class);
+						public void onClick(View v) {				
+							Intent intent = new Intent(mContext, AddEmergency.class);
+							intent.putExtra(Constant.KEY_SER, guardian);
 							startActivity(intent);
 						}
 					});
@@ -983,7 +1001,7 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 					@Override
 					public void onClick(View v) {
-						Toast.makeText(mContext, "position:", Toast.LENGTH_SHORT).show();
+						
 					}
 				});
 			}

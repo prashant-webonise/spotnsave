@@ -21,10 +21,12 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.telephony.SmsManager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,9 +44,11 @@ import com.loopj.android.http.RequestParams;
 import com.luttu.AppPrefes;
 import com.luttu.PictureOrentation;
 import com.luttu.Utils;
+import com.util.Constant;
 import com.util.GlobalFunctions;
 import com.util.GlobalFunctions.HttpResponseHandler;
 import com.util.ImageSmallerAction;
+import com.util.NewDetailGuardian;
 
 public class AddEmergency extends FragmentActivity implements OnClickListener {
 	// ImageView im_cam;
@@ -54,7 +58,7 @@ public class AddEmergency extends FragmentActivity implements OnClickListener {
 	private Button bt_add_contact;
 	private Button bt_activaet;
 	final Activity activity = this;
-
+	private final String TAG = "AddEmergency";
 	private static final int CONTACT_PICKER_RESULT1 = 1001;
 
 	private Uri fileUri;
@@ -74,30 +78,54 @@ public class AddEmergency extends FragmentActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
-		//requestWindowFeature(Window.FEATURE_NO_TITLE);
+		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(arg0);
 		setContentView(R.layout.addemergency);
+
 		getActionBar().setTitle("  " + getString(R.string.add_guardian));
 		getActionBar().setIcon(R.drawable.ic_menu_back);
 		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF02A9D8")));
 		getActionBar().setHomeButtonEnabled(true);
+
 		appPrefes = new AppPrefes(this, "sns");
 		findid();
 		checksetimage();
 		if (!ed_first_name.getText().toString().equals("")) {
 			update = true;
+			bt_activaet.setVisibility(View.GONE);
+		}
+
+		displayContactInfoIfAny();
+
+	}
+
+	private void displayContactInfoIfAny() {
+		try {
+			NewDetailGuardian guardian = (NewDetailGuardian) getIntent().getSerializableExtra(Constant.KEY_SER);
+			ed_first_name.setText(guardian.getName());
+			ed_phone.setText(guardian.getPhoneno());
+			bt_add_contact.setText(R.string.save);
+			appPrefes.SaveData("userID", guardian.getUserID());
+			bt_activaet.setVisibility(View.GONE);
+			update = true;
+			getActionBar().setTitle("  " + getString(R.string.edit_guardian));
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			bt_activaet.setVisibility(View.VISIBLE);
 		}
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem menuItem) {
-	    switch (menuItem.getItemId()) {
-	        case android.R.id.home:
-	        	onBackPressed();
-	            return true;
-	    }
-	    return (super.onOptionsItemSelected(menuItem));
+		switch (menuItem.getItemId()) {
+		case android.R.id.home:
+			onBackPressed();
+			return true;
+		}
+		return (super.onOptionsItemSelected(menuItem));
 	}
+
 	private void findid() {
 		// TODO Auto-generated method stub
 		// im_cam = (ImageView) findViewById(R.id.im_cam);
@@ -190,11 +218,12 @@ public class AddEmergency extends FragmentActivity implements OnClickListener {
 		params.put("phno", phone);
 		params.put("permisssion", "true");
 		String php = "guardian.php";
+
+
 		if (update) {
 			progressshow("Updating  Guardian...");
 			params.put("guardianID", guardianID);
 			System.out.println("image" + image);
-			params.put("image", image);
 			php = "guardian_update.php";
 		} else
 			progressshow("Creating Guardian...");
@@ -205,6 +234,11 @@ public class AddEmergency extends FragmentActivity implements OnClickListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+
+		Log.d(TAG, params.toString());
+		
+		
 		GlobalFunctions.postApiCall(this, Registration_New.Url + php, params, client, new HttpResponseHandler() {
 
 			@Override
@@ -356,6 +390,13 @@ public class AddEmergency extends FragmentActivity implements OnClickListener {
 					// setimage(lists.image.get(itag), imShadow);
 					guardianID = lists.id.get(itag);
 					image = lists.image.get(itag);
+
+					// //////////////////////////////////////////
+
+					getActionBar().setTitle("  " + getString(R.string.edit_guardian));
+					bt_add_contact.setText(R.string.save);
+
+					// //////////////////////////////////////////
 				}
 			}
 		} catch (Exception e) {

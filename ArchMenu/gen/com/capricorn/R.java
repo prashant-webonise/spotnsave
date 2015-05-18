@@ -37,6 +37,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          */
         public static int toDegrees=0x7f010001;
     }
+    public static final class color {
+        public static int primary_color=0x7f040001;
+        public static int stroke_color=0x7f040002;
+        public static int white=0x7f040000;
+    }
     public static final class drawable {
         public static int composer_button=0x7f020000;
         public static int composer_button_normal=0x7f020001;
@@ -47,13 +52,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int drawable_sos_button=0x7f020006;
     }
     public static final class id {
-        public static int control_hint=0x7f040002;
-        public static int control_layout=0x7f040001;
-        public static int item_layout=0x7f040000;
+        public static int control_hint=0x7f060002;
+        public static int control_layout=0x7f060001;
+        public static int item_layout=0x7f060000;
     }
     public static final class layout {
         public static int arc_menu=0x7f030000;
         public static int ray_menu=0x7f030001;
+    }
+    public static final class string {
+        public static int sos=0x7f050000;
     }
     public static final class styleable {
         /** Attributes that can be used with a ArcLayout.

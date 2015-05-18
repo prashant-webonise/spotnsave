@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="185dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/drawable_sos_button"
         android:visibility="gone" >
 
@@ -133,7 +133,7 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_below="@+id/tv1"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:padding="20dp"
         android:src="@drawable/circle"
@@ -329,8 +329,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         arc:childSize="65dp"
-        arc:fromDegrees="72.0"
-        arc:toDegrees="360.0" >
+        arc:fromDegrees="-90.0"
+        arc:toDegrees="198.0" >
     </com.capricorn.ArcMenu>
 
     <TextView

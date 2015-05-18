@@ -21,7 +21,7 @@
     <color name="holo_dark_green">#cc0066</color>
     <color name="primary_color">#02A9D8</color>
     <color name="white">#ffffff</color>
-    <color name="grey_light">#77d3d3d3</color>
+    <color name="stroke_color">#77d3d3d3</color>
     <color name="primary_color_dark">#FF0099cc</color>
     <color name="ascent_color">#FF64d0f8</color>
     <color name="text_color_primary">#FF0099cc</color>

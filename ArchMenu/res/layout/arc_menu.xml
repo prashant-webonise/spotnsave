@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SOS"
-            android:textColor="#FFFFFF"
-            android:duplicateParentState="true"
+            android:text="@string/sos"
+            android:textColor="@color/white"
+            android:duplicateParentState="false"
             android:background="@drawable/drawable_sos_button" />
     </FrameLayout>
 

@@ -2,6 +2,9 @@ int attr childSize 0x7f010002
 int attr fromDegrees 0x7f010000
 int attr leftHolderWidth 0x7f010003
 int attr toDegrees 0x7f010001
+int color primary_color 0x7f040001
+int color stroke_color 0x7f040002
+int color white 0x7f040000
 int drawable composer_button 0x7f020000
 int drawable composer_button_normal 0x7f020001
 int drawable composer_button_pressed 0x7f020002
@@ -9,11 +12,12 @@ int drawable composer_icn_plus 0x7f020003
 int drawable composer_icn_plus_normal 0x7f020004
 int drawable composer_icn_plus_pressed 0x7f020005
 int drawable drawable_sos_button 0x7f020006
-int id control_hint 0x7f040002
-int id control_layout 0x7f040001
-int id item_layout 0x7f040000
+int id control_hint 0x7f060002
+int id control_layout 0x7f060001
+int id item_layout 0x7f060000
 int layout arc_menu 0x7f030000
 int layout ray_menu 0x7f030001
+int string sos 0x7f050000
 int[] styleable ArcLayout { 0x7f010000, 0x7f010001, 0x7f010002 }
 int styleable ArcLayout_childSize 2
 int styleable ArcLayout_fromDegrees 0
