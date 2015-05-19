@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidBootstrap/AndroidBootstrap.iml" filepath="$PROJECT_DIR$/AndroidBootstrap/AndroidBootstrap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArchMenu/ArchMenu.iml" filepath="$PROJECT_DIR$/ArchMenu/ArchMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LuttuLibrary/LuttuLibrary.iml" filepath="$PROJECT_DIR$/LuttuLibrary/LuttuLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpotNSave/SpotNSave.iml" filepath="$PROJECT_DIR$/SpotNSave/SpotNSave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/actionbarsherlock/actionbarsherlock.iml" filepath="$PROJECT_DIR$/actionbarsherlock/actionbarsherlock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" filepath="$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/roundedimageview/roundedimageview.iml" filepath="$PROJECT_DIR$/roundedimageview/roundedimageview.iml" />
       <module fileurl="file://$PROJECT_DIR$/spotnsave.iml" filepath="$PROJECT_DIR$/spotnsave.iml" />
     </modules>
   </component>
